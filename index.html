@@ -63,12 +63,11 @@ h2+.orn{margin-bottom:16px}
 .toc button:hover .t{color:var(--gold)}
 
 /* cover */
-.cover .logo-blk{position:absolute;top:150px;left:50%;width:120px;margin-left:-60px;display:flex;flex-direction:column;align-items:center}
-.cover .logo{width:120px;height:auto;filter:drop-shadow(0 1px 1px rgba(90,60,10,.25))}
+.cover .logo-blk{position:absolute;top:178px;left:50%;transform:translateX(-50%);width:max-content;display:flex;flex-direction:column;align-items:stretch}
 .cover .brand,.cover .lodge{font-family:"Cinzel",Georgia,serif;text-transform:uppercase;white-space:nowrap;
   background:linear-gradient(180deg,#d8a443 0%,#b07f2a 55%,#8a5f17 100%);-webkit-background-clip:text;background-clip:text;color:transparent}
-.cover .brand{font-weight:600;font-size:12.6px;letter-spacing:.08em;line-height:1.2;margin-top:4px;padding-left:.08em}
-.cover .lodge{display:flex;align-items:center;width:100%;gap:6px;font-weight:600;font-size:8.5px;letter-spacing:.4em;line-height:1.4;padding-left:.4em}
+.cover .brand{font-weight:600;font-size:21px;letter-spacing:.1em;line-height:1.2;padding-left:.1em;text-align:center}
+.cover .lodge{display:flex;align-items:center;width:100%;gap:10px;font-weight:600;font-size:11px;letter-spacing:.45em;line-height:1.6;padding-left:.45em;margin-top:4px}
 .cover .lodge span{display:block;flex:1;height:1px;background:#b07f2a}
 .cover .script{position:absolute;left:0;right:0;top:50%;transform:translateY(-50%);text-align:center;font-size:96px}
 .cover .below{position:absolute;left:0;right:0;top:calc(50% + 56px);display:flex;flex-direction:column;align-items:center;gap:14px}
@@ -121,7 +120,7 @@ const sec = (s, roomy) => `<div class="sec"><h2>${s.t}</h2>${orn}<div class="lis
 const TOC = [["Salads & Soups",2],["To Share",3],["Main Course",4],["Pasta",5],["Korean Food",6]];
 
 const PAGES = [
-  {cls:"cover", hard:true, html:`<div class="logo-blk"><img class="logo" src="gl.png" alt="Gegeen Terelj Lodge logo"><div class="brand">Gegeen Terelj</div><div class="lodge"><span></span>Lodge<span></span></div></div><div class="script">Menu</div><div class="below">${orn}<div class="sub">Bon appétit</div></div>`},
+  {cls:"cover", hard:true, html:`<div class="logo-blk"><div class="brand">Gegeen Terelj</div><div class="lodge"><span></span>Lodge<span></span></div></div><div class="script">Menu</div><div class="below">${orn}<div class="sub">Bon appétit</div></div>`},
   {html:`<h2>Welcome</h2>${orn}<p class="welcome">We are delighted to have you with us.<br>Please take your time and enjoy.</p>
      <div class="toc">${TOC.map(([t,p]) => `<button data-go="${p}"><span class="t">${t}</span><span class="dots"></span><span>${p}</span></button>`).join('')}</div>`},
   {html: sec(MENU[0]) + sec(MENU[1])},
